@@ -1,7 +1,8 @@
 # haproxy-build
 ```
 yum install -y rpm-build rpmdevtools pcre-devel openssl-devel zlib-devel redhat-rpm-config \
-               gcc gcc-c++ make libstdc++-devel wget rpmlint vim rpmdev-setuptree
+               gcc gcc-c++ make libstdc++-devel wget rpmlint vim rpmdev-setuptree \
+               lua-devel systemd-devel systemd-devel
 cd ~
 rm -rf rpmbuild
 rpmdev-setuptree
