@@ -12,5 +12,5 @@ mv rpmbuild/SOURCES/haproxy.spec rpmbuild/SPECS
 spectool -R -g ~/rpmbuild/SPECS/haproxy.spec
 rpmlint ~/rpmbuild/SPECS/haproxy.spec
 rpmbuild -ba ~/rpmbuild/SPECS/haproxy.spec
-yum install ~/rpmbuild/RPMS/x86_64/haproxy-2.2.30-1.el8.x86_64.rpm
+yum install ~/rpmbuild/RPMS/x86_64/haproxy-2.2.25-1.el8.x86_64.rpm
 ```
