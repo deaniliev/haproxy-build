@@ -19,8 +19,7 @@ Source1:        %{name}.service
 Source2:        %{name}.cfg
 Source3:        %{name}.logrotate
 Source4:        %{name}.sysconfig
-Source5:        %{name}.sysusers
-Source6:        halog.1
+Source5:        halog.1
 
 BuildRequires:  gcc
 BuildRequires:  lua-devel
@@ -95,7 +94,12 @@ do
 done
 
 %pre
-%sysusers_create_compat %{SOURCE5}
+getent group %{haproxy_group} >/dev/null || \
+    groupadd -r %{haproxy_group}
+getent passwd %{haproxy_user} >/dev/null || \
+    useradd -r -g %{haproxy_user} -d %{haproxy_homedir} \
+    -s /sbin/nologin -c "haproxy" %{haproxy_user}
+exit 0
 
 %post
 %systemd_post %{name}.service
